@@ -35,7 +35,7 @@ const dataList = [
 ];
 function Service() {
   return (
-    <div className="py-14 bg-slate-100 dark:bg-black dark:text-white sm:min-h-[450px] sm:grid place-items-center ">
+    <div className="py-14 bg-slate-100 min-h-[250px] dark:bg-black dark:text-white sm:min-h-[350px] sm:grid place-items-center ">
       <div className="container">
         <div className="pb-12 ">
           <h1 className="text-3xl font-bold text-center font-serif sm:text-4xl">

@@ -1,4 +1,4 @@
-import aboutCar from "../../assets/images/p1.png";
+import aboutCar from "../../assets/images/bmcar.png";
 function About() {
   return (
     <div className="font-serif  bg-slate-100 dark:bg-black dark:text-white sm:min-h-[450px] sm:grid sm:place-items-center">
@@ -7,13 +7,9 @@ function About() {
           <div
             data-aos="slide-right"
             data-aos-duration="900"
-            className="w-[330px] sm:w-[450px]"
+            className="w-[350px] sm:w-[600px]"
           >
-            <img
-              className="drop-shadow-[2px_10px_6px_rgba(0,0,0,0.50)]"
-              src={aboutCar}
-              alt="about-car"
-            />
+            <img src={aboutCar} alt="about-car" />
           </div>
           <div
             data-aos="fade-up"
