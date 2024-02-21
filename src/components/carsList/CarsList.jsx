@@ -7,6 +7,7 @@ import WhiteScorpio from "../../assets/images/wb.png";
 import P1 from "../../assets/images/p1.png";
 import Y2 from "../../assets/images/car2.png";
 import B1 from "../../assets/images/b1.png";
+import { forwardRef } from "react";
 
 const carsList1 = [
   {
@@ -25,49 +26,52 @@ const carsList1 = [
     name: "CAR 3",
     price: 150,
     image: Y2,
-    aosDelay: "500",
+    aosDelay: "300",
   },
   {
     name: "CAR 4",
     price: 150,
     image: C2,
-    aosDelay: "500",
+    aosDelay: "300",
   },
   {
     name: "CAR 5",
     price: 150,
     image: Y1,
-    aosDelay: "500",
+    aosDelay: "300",
   },
   {
     name: "CAR 6",
     price: 150,
     image: G1,
-    aosDelay: "500",
+    aosDelay: "300",
   },
   {
     name: "CAR 7",
     price: 150,
     image: WhiteCar,
-    aosDelay: "500",
+    aosDelay: "300",
   },
   {
     name: "CAR 8",
     price: 150,
     image: WhiteScorpio,
-    aosDelay: "500",
+    aosDelay: "300",
   },
   {
     name: "CAR 9",
     price: 150,
     image: B1,
-    aosDelay: "500",
+    aosDelay: "300",
   },
 ];
 
-function CarsList() {
+function CarsList({ props }, ref) {
   return (
-    <div className="pb-24 bg-slate-100 dark:bg-black pt-12 dark:text-white">
+    <div
+      ref={ref}
+      className="pb-24 bg-slate-100 dark:bg-black pt-12 dark:text-white"
+    >
       <div className="container">
         <h1
           data-aos="fade-up"
@@ -112,7 +116,7 @@ function CarsList() {
           <div className="text-xl grid place-items-center mt-10 dark:text-white ">
             <button
               data-aos="fade-up"
-              data-aos-delay="300"
+              data-aos-delay="200"
               className=" border-2 border-primary py-2 px-1 rounded-sm outline-none hover:bg-primary"
             >
               Get Started
@@ -124,4 +128,4 @@ function CarsList() {
   );
 }
 
-export default CarsList;
+export default forwardRef(CarsList);

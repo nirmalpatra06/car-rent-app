@@ -1,7 +1,14 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+import { forwardRef } from "react";
 import aboutCar from "../../assets/images/bmcar.png";
-function About() {
+
+function About({ props }, ref) {
   return (
-    <div className="font-serif  bg-slate-100 dark:bg-black dark:text-white sm:min-h-[450px] sm:grid sm:place-items-center">
+    <div
+      ref={ref}
+      className="font-serif  bg-slate-100 dark:bg-black dark:text-white sm:min-h-[450px] sm:grid sm:place-items-center"
+    >
       <div className="container">
         <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center space-x-5">
           <div
@@ -37,4 +44,4 @@ function About() {
   );
 }
 
-export default About;
+export default forwardRef(About);

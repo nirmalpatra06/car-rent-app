@@ -1,6 +1,7 @@
 import { IoIosCamera } from "react-icons/io";
 import { AiFillSafetyCertificate } from "react-icons/ai";
 import { TfiWrite } from "react-icons/tfi";
+import { forwardRef } from "react";
 const dataList = [
   {
     name: "Best Price",
@@ -20,7 +21,7 @@ const dataList = [
     link: "#",
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque blanditiis, sapiente rem quam dicta aspernatur! Dolores in saepe ipsum impedit?",
-    aosDelay: "500",
+    aosDelay: "300",
   },
   {
     name: "Experience",
@@ -30,12 +31,15 @@ const dataList = [
     link: "#",
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque blanditiis, sapiente rem quam dicta aspernatur! Dolores in saepe ipsum impedit?",
-    aosDelay: "1000",
+    aosDelay: "500",
   },
 ];
-function Service() {
+function Service({ props }, ref) {
   return (
-    <div className="py-14 bg-slate-100 min-h-[250px] dark:bg-black dark:text-white sm:min-h-[350px] sm:grid place-items-center ">
+    <div
+      ref={ref}
+      className="py-14 bg-slate-100 min-h-[250px] dark:bg-black dark:text-white sm:min-h-[350px] sm:grid place-items-center "
+    >
       <div className="container">
         <div className="pb-12 ">
           <h1 className="text-3xl font-bold text-center font-serif sm:text-4xl">
@@ -64,4 +68,4 @@ function Service() {
   );
 }
 
-export default Service;
+export default forwardRef(Service);

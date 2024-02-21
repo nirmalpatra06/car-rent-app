@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import NavBar from "./components/navBar/NavBar";
 import Hero from "./components/hero/Hero";
 import About from "./components/about/About";
@@ -10,6 +10,10 @@ import Testimonial from "./components/testimonial/Testimonial";
 import AppStore from "./components/appStore/AppStore";
 import Footer from "./components/footer/Footer";
 function App() {
+  const aboutRef = useRef(null);
+  const carSectionRef = useRef(null);
+  const serviceRef = useRef(null);
+
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
@@ -39,11 +43,17 @@ function App() {
 
   return (
     <div>
-      <NavBar theme={theme} setTheme={setTheme} />
+      <NavBar
+        theme={theme}
+        setTheme={setTheme}
+        aboutRef={aboutRef}
+        carSectionRef={carSectionRef}
+        serviceRef={serviceRef}
+      />
       <Hero theme={theme} />
-      <About />
-      <CarsList />
-      <Service />
+      <About ref={aboutRef} />
+      <CarsList ref={carSectionRef} />
+      <Service ref={serviceRef} />
       <Testimonial />
       <AppStore />
       <Footer />

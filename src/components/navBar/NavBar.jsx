@@ -28,7 +28,7 @@ export const navLinks = [
     link: "/#service",
   },
 ];
-function NavBar({ theme, setTheme }) {
+function NavBar({ theme, setTheme, aboutRef, carSectionRef, serviceRef }) {
   const [showMenu, setShowMenu] = useState(false);
 
   function toggleMenu() {
@@ -46,16 +46,67 @@ function NavBar({ theme, setTheme }) {
           </div>
           <div className="hidden md:block">
             <ul className="flex items-center gap-8">
-              {navLinks.map((item) => (
+              {/* {navLinks.map((item) => (
                 <li key={item.id}>
                   <a
+                    onClick={() =>
+                      carSectionRef ||
+                      aboutRef ||
+                      serviceRef?.current?.scrollIntoView({
+                        behavior: "smooth",
+                      })
+                    }
                     className="inline-block py-2 font-medium hover:border-b-[0.5px] text-lg transition-colors duration-300 hover:text-primary hover:border-b-primary"
                     href={item.link}
                   >
                     {item.name}
                   </a>
                 </li>
-              ))}
+              ))} */}
+
+              <li>
+                <a
+                  className="inline-block py-2 font-medium hover:border-b-[0.5px] text-lg transition-colors duration-300 hover:text-primary hover:border-b-primary"
+                  href="/"
+                >
+                  HOME
+                </a>
+              </li>
+              <li>
+                <a
+                  className="inline-block py-2 font-medium hover:border-b-[0.5px] text-lg transition-colors duration-300 hover:text-primary hover:border-b-primary"
+                  onClick={() =>
+                    carSectionRef.current?.scrollIntoView({
+                      behavior: "smooth",
+                    })
+                  }
+                  href="/#cars"
+                >
+                  CARS
+                </a>
+              </li>
+              <li>
+                <a
+                  className="inline-block py-2 font-medium hover:border-b-[0.5px] text-lg transition-colors duration-300 hover:text-primary hover:border-b-primary"
+                  onClick={() =>
+                    aboutRef.current?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  href="/#about"
+                >
+                  ABOUT
+                </a>
+              </li>
+              <li>
+                <a
+                  className="inline-block py-2 font-medium hover:border-b-[0.5px] text-lg transition-colors duration-300 hover:text-primary hover:border-b-primary"
+                  onClick={() =>
+                    serviceRef.current?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  href="/#service"
+                >
+                  SERVICE
+                </a>
+              </li>
             </ul>
           </div>
           <div className="flex items-center gap-3">
